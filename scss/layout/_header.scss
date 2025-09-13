@@ -27,6 +27,8 @@
 .top-bar {
     @extend %flexCenter;
 
+    position: relative;
+
     @include abstracts.breakpoint(sm) {
         justify-content: space-between;
     }
@@ -60,11 +62,17 @@
         @extend %flexCenter;
     }
 
+    &__item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+    }
+
     &__link {
         @extend %flexCenter;
 
         column-gap: 6px;
-        padding: 8px 15px;
+        height: 50px;
+        padding: 0 15px;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
@@ -102,7 +110,7 @@
             display: none;
         }
 
-        &__btn {
+        .top-act__btn {
             padding: 0 13px;
         }
     }
@@ -111,6 +119,7 @@
         @extend %flexCenter;
 
         column-gap: 10px;
+        min-width: 50px;
         height: 50px;
         padding: 0 20px;
         border-radius: 8px;
